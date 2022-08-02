@@ -1,0 +1,41 @@
+<page-header title="Contacts Page" subtitle="This is the contacts page" icon="fa-solid fa-address-card"
+  bgColor="alert-primary rounded-3 p-2"></page-header>
+
+<div class="mb-2">
+  <a routerLink="new-contact" class="btn btn-outline-dark" title="Add new contact">{{ "Add Contact" | titlecase }}</a>
+</div>
+
+<table class="table" *ngIf="contacts.length; else noContact">
+  <thead>
+    <tr>
+      <th>Num.</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr [ngClass]="odd ? 'bg-primary' : 'bg-light'" *ngFor="let contact of contacts ;index as i; odd as odd">
+      <td>{{i+1}}</td>
+      <td>{{ contact.firstName | titlecase }}</td>
+      <td>{{ contact.lastName | titlecase }}</td>
+      <td>{{ contact.email }}</td>
+      <td>{{ contact.phone }}</td>
+      <td>{{contact.age}}</td>
+      <td>{{ contact.address?.conutry  | titlecase }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noContact>
+  <div class="p-2">
+    {{
+      "Opss... no contact where found in the database"
+        | textCapital
+    }}
+  </div>
+</ng-template>

@@ -1,0 +1,11 @@
+<ul *ngIf="links.length; else noLinks">
+  <side-nav-link *ngFor="let link of links" [icon]="link.icon" [link]=" link.link" [text]="link.text">
+  </side-nav-link>
+</ul>
+
+<ng-template #noLinks>
+  <ul>
+    <li class="text-light"> {{"Oops... it looks like there are no links to display at the moment" | textCapital}}</li>
+  </ul>
+
+</ng-template>

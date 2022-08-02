@@ -1,0 +1,35 @@
+<page-header title="Customers Page" subtitle="This is the customers Page" icon="fas fa-users">
+</page-header>
+
+<div class="mb-2">
+  <a routerLink="new-customer" class="btn btn-outline-dark"
+    title="Add new customer">{{ "Add Customer" | titlecase }}</a>
+</div>
+
+<table class="table" *ngIf="customers.length; else noCustomers">
+  <thead>
+    <tr>
+      <th>{{"Num." | titlecase}}</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr [ngClass]="odd ? 'bg-success' : 'bg-light'" *ngFor="let customer of customers; index as i; odd as odd">
+      <td>{{ i + 1}}</td>
+      <!-- <td>{{customers.length}}</td> -->
+      <td>{{customer.firstName | textCapital}}</td>
+      <td>{{customer.lastName | textCapital}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.phone}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noCustomers>
+  <div class="p-2">
+    {{"Opss... no customer where found in the database" | textCapital}}
+  </div>
+</ng-template>

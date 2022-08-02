@@ -1,0 +1,9 @@
+<div class="container">
+  <figure>
+    <img [src]="image.url" [alt]="image.alt" [hidden]="isHidden" />
+    <figcaption>{{image.alt}}</figcaption>
+  </figure>
+  <button class="btn btn-success" (click)="toggle()">Click here</button>
+  <input [(ngModel)]="image.alt">
+
+</div>
