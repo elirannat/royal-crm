@@ -4,8 +4,8 @@
 <div *ngIf="dataReceived; else loader">
   <div class="d-flex justify-content-between">
     <div class="mb-2">
-      <a routerLink="new-contact" class="btn btn-outline-dark" title="Add new contact"><i
-          class="fa fa-plus-circle"></i>{{ "Add Contact" | titlecase }}</a>
+      <a routerLink="new-contact" class="btn btn-outline-dark" title="Add new contact"><i class="fa fa-plus-circle"></i>
+        {{ "Add Contact" | titlecase }}</a>
     </div>
 
     <display-mode-controllers [controllers]="controllers" (onChangeDisplay)="onChangeDisplay($event)">
