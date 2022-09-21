@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-nav-active {
+  font-weight: bold;
+}
+
+.cursor {
+  cursor: pointer;
+}
