@@ -6,8 +6,8 @@
       <th>{{ "Last Name" | titlecase }}</th>
       <th class="d-none d-md-table-cell">{{ "Email" | titlecase }}</th>
       <th class="d-none d-md-table-cell">{{ "Phone" | titlecase }}</th>
-      <th>{{ "Birthday" | titlecase }}</th>
-      <th>{{ "Age" | titlecase }}</th>
+      <th class="d-none d-md-table-cell">{{ "Birthday" | titlecase }}</th>
+      <th class="d-none d-md-table-cell">{{ "Age" | titlecase }}</th>
       <th>{{ "Edit" | titlecase }}</th>
       <th>{{ "Delete" | titlecase }}</th>
     </tr>
@@ -21,8 +21,8 @@
       <td>{{ contact.lastName | titlecase }}</td>
       <td class="d-none d-md-table-cell">{{ contact.email }}</td>
       <td class="d-none d-md-table-cell">{{ contact.phone }}</td>
-      <td>{{ contact.birthday | date: "mediumDate" }}</td>
-      <td>{{ contact.birthday | calcAge }}</td>
+      <td class="d-none d-md-table-cell">{{ contact.birthday | date: "mediumDate" }}</td>
+      <td class="d-none d-md-table-cell">{{ contact.birthday | calcAge }}</td>
       <td><a class="btn btn-outline-dark" [routerLink]="['edit-contact', contact._id]" role="button">
           <i class="fas fa-pen"></i>
         </a></td>
